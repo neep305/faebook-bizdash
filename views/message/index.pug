@@ -1,0 +1,35 @@
+extends ../layout
+block append-header
+  link(rel="stylesheet", href="/stylesheets/style.css")
+block content
+    br
+    div.jumbotron
+        h1.display-4
+            | Send Message
+        br
+        input.form-control(placeholder="Name")
+        br
+        button.btn.btn-success#send
+            | Send
+    div.ml-2.mr-2#messages
+block append-script
+    script(src="/javascripts/main.js")
+    script.
+        $(() => {
+            $("#send").click(() => {
+                addMessages({
+                    name: 'Tim',
+                    message: 'Hello'
+                })
+            })
+            getMessages();
+        })
+        const addMessages = (message) => {
+            $("#messages").append(`<h4>${message.name}</h4><p>${message.message}</p>`)
+        }
+        const getMessages = () => {
+            $.get('http://localhost:3000/api/message', (data) => {
+                data.forEach(addMessages);
+                
+            })
+        }

@@ -1,0 +1,109 @@
+extends layout
+block append-header
+  link(rel="stylesheet", href="/stylesheets/style.css")
+block content
+  section.jumbotron.text-center
+    .container      
+      p.lead.text-muted
+        | Facebook Contents AB Test
+        
+      //- .row.mx-auto
+          a#blockBtn.btn.btn-primary.my-2(href='#') Block UI
+          sapn 
+            | &nbsp;
+          .form-group
+            input#date.form-control(type='text', name='date', placeholder='2019-03-14') 
+  .album.py-5
+    .container
+      .row
+        h3 어드민
+        table.table.table-border.table-hover.table-striped.mb-4
+          thead
+            tr
+              th(scope="col") 상품명
+              th(scope="col") 캠페인ID
+              th(scope="col") 캠페인
+              th(scope="col") 컨텐츠속성
+              th(scope="col") 테스트변수
+              th(scope="col") 채널
+              th(scope="col") 매체코드
+          tbody
+            tr
+              td aaa            
+              td aaa            
+              td aaa            
+              td aaa            
+              td aaa            
+              td aaa            
+              td aaa
+            tr
+              td aaa            
+              td aaa            
+              td aaa            
+              td aaa            
+              td aaa            
+              td aaa            
+              td aaa
+        h3 상세 대시보드
+        table.table.table-border.table-hover.table-striped
+          thead
+            tr
+              th(scope="col", rowspan="2") 컨텐츠 속성
+              th(scope="col", rowspan="2") 카테고리
+              th(scope="col", rowspan="2") 상품명
+              th(scope="col", rowspan="2") 테스트변수
+              th(scope="col", rowspan="2") 채널
+              th(scope="col", rowspan="2") 소재
+              th(scope="col", rowspan="2") 결과
+              th(scope="col", rowspan="2") 변수유효성
+              th(scope="col", rowspan="2") 시작
+              th(scope="col", rowspan="2") 종료
+              th(scope="col", rowspan="2") 티켓
+              th(scope="col", rowspan="2") KPI
+              th(scope="col", rowspan="2") 노출
+              th(scope="col", rowspan="2") 링크클릭
+              th(scope="col", rowspan="2") CPC(링크클릭당 비용)
+              th(scope="col", rowspan="2") UV
+              th(scope="col", rowspan="2") CPUV
+              th(scope="col", rowspan="1", colspan="5") 고객 인게이지먼트
+            tr(rol="row")
+              th(scope="col", rowspan="1", colspan="1") 인터렉션
+              th(scope="col", rowspan="1", colspan="1") 조회수
+              th(scope="col", rowspan="1", colspan="1") 평균시청시간
+              th(scope="col", rowspan="1", colspan="1") 3초+ 조회
+              th(scope="col", rowspan="1", colspan="1") 시청추이
+          tbody
+            tr
+              td a
+              td a
+              td a
+              td a
+              td a
+              td a
+              td a
+              td a
+              td a
+              td a
+              td a
+              td a
+              td a
+              td a
+              td a
+              td a
+              td a
+              td a
+              td a
+              td a
+              td a
+              td a
+
+block append-script
+  script. 
+    $(() => {
+      jqueryDatepicker($);
+      $('#date').datepicker({ dateFormat: 'yy-mm-dd' });
+      $("#blockBtn").on('click', () => {
+        $.blockUI();
+        setTimeout(()=> {$.unblockUI();}, 2000);
+      });
+    });

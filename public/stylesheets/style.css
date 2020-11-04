@@ -1,0 +1,22 @@
+body {
+  /* padding: 50px; */
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.table tr th {
+  vertical-align: middle;
+}
+
+.jumbotron {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.entry:not(:first-of-type)
+{
+    margin-top: 10px;
+}

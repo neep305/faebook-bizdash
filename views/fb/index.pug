@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+    main.flex-shrink-0(role='main')
+        #fb-root
+        
+        //- fb:login-button(scope='public_profile,email', onlogin='checkLoginState();')
+        .container.mb-5
+            .row.mb-5
+            a.btn.btn-lg.btn-primary.btn-block.fb-login(href='/fb/auth') Facebook 로그인
+
+        #status
+    
+block append-script
+    //- script(src='/javascripts/fb-common.js')
+    //- script(async='', defer='', crossorigin='anonymous', src='//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2&appId=567491550419839&autoLogAppEvents=1')
+    //- script(src='/javascripts/common-login.js')
